@@ -83,4 +83,9 @@
     .prose :not(pre)>code {
         @apply px-1.5 py-0.5 rounded bg-slate-100 dark:bg-gray-800 text-pink-500 dark:text-pink-400 font-medium;
     }
+
+    /* Map Underline (Ctrl+U) to Inline Code Style */
+    .prose u {
+        @apply px-1.5 py-0.5 rounded bg-slate-100 dark:bg-gray-800 text-brand-600 dark:text-brand-400 font-medium no-underline;
+    }
 }
