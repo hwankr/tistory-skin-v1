@@ -1,236 +1,791 @@
 <!DOCTYPE html>
-<html lang="ko" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="ko">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="preconnect" href="https://t1.daumcdn.net/" crossorigin />
+  <link rel="preconnect" href="https://tistory1.daumcdn.net/" crossorigin />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="dns-preferch" href="https://t1.daumcdn.net/" crossorigin />
+  <link rel="dns-prefetch" href="https://tistory1.daumcdn.net/" crossorigin />
+  <link rel="dns-prefetch" href="https://img1.daumcdn.net/" crossorigin />
+  <script>
+    var UNWANTED_SCRIPTS=["TistoryProfileLayer/script.js","roosevelt_dk_bt.js","owner.js"],UNWANTED_SCRIPT_CONTENTS=["gtag()","switchFold","loadedComments","lightbox.options"],UNWANTED_STYLESHEETS="style/font.css top/font.css TistoryProfileLayer/style.css BusinessLicenseInfo/style.css uselessPMargin.css dialog.css revenue.css".split(" "),ASYNC_SCRIPTS=["tiara.min.js","kakao.min.js"],LAZY_POST_SCRIPTS=["googletagmanager.com/gtag","comment.js","lightbox-v2.10.0.min.js","reaction-button-container.min.js","menubar.min.js"],LAZY_POST_STYLESHEETS=["lightbox.min.css","comment.css","postBtn.css"],blockedScripts=[],blockedStylesheets=[],blockedScriptContents=[],mutationObserver=new MutationObserver((function(e){e.forEach((function(e){var t=e.addedNodes[0];if(t&&1===t.nodeType)if("SCRIPT"===t.tagName){var s=t.src;s&&ASYNC_SCRIPTS.some((function(e){return s.includes(e)}))?t.async=!0:s&&UNWANTED_SCRIPTS.some((function(e){return s.includes(e)}))?t.parentNode.removeChild(t):t.textContent&&UNWANTED_SCRIPT_CONTENTS.some((function(e){return t.textContent.includes(e)}))?(t.textContent.includes("gtag")&&blockedScriptContents.push(t.cloneNode(!0)),t.parentNode.removeChild(t)):s&&LAZY_POST_SCRIPTS.some((function(e){return s.includes(e)}))&&(blockedScripts.push(t.cloneNode(!0)),t.parentNode.removeChild(t))}else"LINK"===t.tagName&&"stylesheet"===t.rel&&t.href&&(LAZY_POST_STYLESHEETS.some((function(e){return t.href.includes(e)}))?(blockedStylesheets.push(t.cloneNode(!0)),t.parentNode.removeChild(t)):UNWANTED_STYLESHEETS.some((function(e){return t.href.includes(e)}))&&t.parentNode.removeChild(t))}))}));mutationObserver.observe(document.documentElement,{childList:!0,subtree:!0});
+  </script>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="title" content="[##_page_title_##]" />
+    <meta name="description" content="[##_desc_##]" />
+    <meta
+      name="viewport"
+      content="width=device-width, height=device-height, initial-scale=1, minimum-scale=1.0, maximum-scale=5.0"
+      />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
     <title>[##_page_title_##]</title>
-    
-    <!-- Fonts: Pretendard CDN -->
-    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
-    
-    <!-- Alpine.js -->
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-
-    <!-- Prism.js Themes (Okaidia is a good base for dark mode) -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css" rel="stylesheet" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" rel="stylesheet" />
-
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="./style.css">
-
+    <script>
+      (function(){
+        var root=document.documentElement;
+        root.classList.add("js");
+        var stored=null;
+        try{stored=localStorage.getItem("tistory-theme");}catch(e){}
+        var system=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";
+        var theme=stored==="light"||stored==="dark"?stored:system;
+        root.setAttribute("data-theme",theme);
+      })();
+    </script>
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="[##_title_##]"
+      href="[##_rss_url_##]"
+      />
+    <link rel="shortcut icon" href="[##_blog_link_##]favicon.ico" />
     <style>
-        /* Tistory defaults override if necessary */
-        .tt_article_useless_p_margin p { margin-top: 0 !important; margin-bottom: 0 !important; }
+      :root {--primary-rgb:[##_var_primaryColor_##] !important;}
     </style>
-</head>
-<body id="[##_body_id_##]" x-data="themeData()" :class="{ 'dark': isDark }">
-
-    <!-- Skin Container -->
+    <link rel="preload" as="style" href="./style.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css?family=Material+Icons+Outlined&display=swap"
+      />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Material+Icons+Outlined&display=swap"
+      />
+    <script>
+      function loadStylesheet(e){return new Promise((function(n,t){var r=document.createElement("link");r.rel="stylesheet",r.href=e,r.addEventListener("load",n),r.addEventListener("error",t),document.head.appendChild(r)}))}function loadScript(e){return new Promise((function(n,t){var r=document.createElement("script");r.src=e,r.addEventListener("load",n),r.addEventListener("error",t),document.head.appendChild(r)}))}
+      (function(){var e=0,t=60;function r(){if(window.tjQuery){(typeof window.$!=="function"||window.$!==window.tjQuery)&&(window.$=window.tjQuery,window.jQuery=window.tjQuery);return}++e<t&&setTimeout(r,50)}r()})();
+    </script>
+  </head>
+  <body id="[##_body_id_##]" class="no-scroll">
     <s_t3>
-    <div class="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
-        
-        <!-- Header -->
-        <header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 transition-colors duration-300">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex justify-between items-center h-16">
-                    <!-- Logo -->
-                    <div class="flex-shrink-0 flex items-center">
-                        <a href="[##_blog_link_##]" class="font-bold text-xl text-slate-900 dark:text-white tracking-tight">
-                            [##_title_##]
-                        </a>
-                    </div>
-
-                    <!-- Desktop Nav & Actions -->
-                    <div class="flex items-center space-x-4">
-                        <!-- Dark Mode Toggle -->
-                        <button @click="toggleTheme()" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-600 dark:text-gray-300 transition-colors">
-                            <span x-show="!isDark">🌙</span>
-                            <span x-show="isDark" style="display: none;">☀️</span>
-                        </button>
-                        
-                        <!-- Search/Menu triggers can go here -->
-                        <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden p-2 rounded-md text-gray-600 dark:text-gray-300">
-                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-                        </button>
-                    </div>
-                </div>
+      <header>
+        <div id="progress" class="progress-bar">&nbsp</div>
+        <div id="header_wrap">
+          <div id="header_gnb">
+            <div id="header-title">
+              <a href="[##_blog_link_##]">[##_title_##]</a>
             </div>
-            
-            <!-- Mobile Menu -->
-            <div x-show="mobileMenuOpen" @click.away="mobileMenuOpen = false" class="md:hidden bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800" style="display: none;">
-                <nav class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                     <div class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:text-gray-900 hover:bg-gray-50 dark:hover:bg-gray-800">[##_blog_link_##]</div>
-                </nav>
+            <div id="search-bar">
+              <button
+                class="search-icon"
+                aria-label="search icon"
+                onclick="if (window.getComputedStyle(document.getElementById('search-input')).display != 'none') {  window.location.href = '/search' + '/' + looseURIEncode(document.getElementsByName('search')[0].value);document.getElementsByName('search')[0].value = '';} else { document.getElementById('search-bar').classList.add('active'); document.getElementById('search-input').focus();}"
+                >
+              <span class="material-icons-outlined material-icon"
+                >search</span
+                >
+              </button>
+              <input
+                class="input-text"
+                type="text"
+                name="search"
+                value=""
+                id="search-input"
+                onkeypress="if (event.keyCode==13) { try {window.location.href = '/search' + '/' + looseURIEncode(document.getElementsByName('search')[0].value);document.getElementsByName('search')[0].value = '';	return false;} catch (e) {} }"
+                placeholder="키워드를 입력하세요."
+                />
+              <button
+                class="search-close-icon"
+                onclick="document.getElementById('search-bar').classList.remove('active')"
+                >
+              x
+              </button>
             </div>
-        </header>
-
-        <!-- Main Layout -->
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12">
-            <div class="lg:grid lg:grid-cols-12 lg:gap-12"> <!-- 2 Column Layout -->
-                
-                <!-- Main Content (Left/Center) -->
-                <main class="lg:col-span-8 space-y-8">
-                    
-                    <!-- Post List -->
-                     <s_list>
-                        <div class="bg-white dark:bg-gray-800 shadow-sm rounded-xl overflow-hidden hover:shadow-md transition-shadow duration-300 border border-gray-100 dark:border-gray-700">
-                            <div class="p-6 sm:p-8">
-                                <span class="text-sm font-medium text-brand-600 dark:text-brand-400 mb-2 block">[##_list_rep_category_##]</span>
-                                <a href="[##_list_rep_link_##]" class="block mt-1">
-                                    <h2 class="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-3 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">
-                                        [##_list_rep_title_##]
-                                    </h2>
-                                    <p class="text-base text-gray-500 dark:text-gray-400 line-clamp-3 mb-4">
-                                        [##_list_rep_summary_##]
-                                    </p>
-                                </a>
-                                <div class="flex items-center text-sm text-gray-400 dark:text-gray-500">
-                                    <span class="mr-3">[##_list_rep_regdate_##]</span>
-                                    <span>댓글 [##_list_rep_rp_cnt_##]</span>
-                                </div>
-                            </div>
-                        </div>
-                    </s_list>
-
-                    <!-- Post Detail -->
-                     <s_article_rep>
-                        <s_index_article_rep>
-                            <div class="bg-white dark:bg-gray-800 shadow-sm rounded-xl overflow-hidden hover:shadow-md transition-shadow duration-300 border border-gray-100 dark:border-gray-700 mb-8">
-                                <div class="p-6 sm:p-8">
-                                    <span class="text-sm font-medium text-brand-600 dark:text-brand-400 mb-2 block">[##_article_rep_category_##]</span>
-                                    <a href="[##_article_rep_link_##]" class="block mt-1">
-                                        <h2 class="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-3 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">
-                                            [##_article_rep_title_##]
-                                        </h2>
-                                        <p class="text-base text-gray-500 dark:text-gray-400 line-clamp-3 mb-4">
-                                            [##_article_rep_summary_##]
-                                        </p>
-                                    </a>
-                                    <div class="flex items-center text-sm text-gray-400 dark:text-gray-500">
-                                        <span class="mr-3">[##_article_rep_date_##]</span>
-                                        <span>댓글 [##_article_rep_rp_cnt_##]</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </s_index_article_rep>
-
-                        <article class="bg-white dark:bg-gray-800 shadow-sm rounded-xl overflow-hidden border border-gray-100 dark:border-gray-700">
-                             <s_permalink_article_rep>
-                                <div class="p-6 sm:p-10">
-                                    <header class="mb-8 border-b border-gray-100 dark:border-gray-700 pb-8">
-                                        <div class="flex items-center space-x-2 text-sm text-brand-600 dark:text-brand-400 font-medium mb-3">
-                                            <a href="[##_article_rep_category_link_##]">[##_article_rep_category_##]</a>
-                                        </div>
-                                        <h1 class="text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-white tracking-tight mb-4 leading-tight">
-                                            [##_article_rep_title_##]
-                                        </h1>
-                                        <div class="flex justify-between items-center text-sm text-gray-500 dark:text-gray-400">
-                                            <div class="flex items-center space-x-2">
-                                                <span>[##_article_rep_author_##]</span>
-                                                <span>&middot;</span>
-                                                <span>[##_article_rep_date_##]</span>
-                                            </div>
-                                            <s_ad_div>
-                                                <span><a href="[##_s_ad_m_link_##]" class="hover:text-gray-800 dark:hover:text-gray-300">수정</a></span>
-                                            </s_ad_div>
-                                        </div>
-                                    </header>
-                                    
-                                    <!-- Content Body -->
-                                    <div class="prose prose-lg prose-slate dark:prose-invert max-w-none break-keep">
-                                        [##_article_rep_desc_##]
-                                    </div>
-
-                                    <!-- Tags -->
-                                    <s_tag_label>
-                                        <div class="mt-10 flex flex-wrap gap-2">
-                                            <span class="text-gray-500 dark:text-gray-400 mr-2 py-1">Tags:</span>
-                                            [##_tag_label_rep_##]
-                                        </div>
-                                    </s_tag_label>
-
-                                </div>
-                             </s_permalink_article_rep>
-                        </article>
-                    </s_article_rep>
-
-                    <!-- Paging -->
-                    <s_paging>
-                        <div class="flex justify-center space-x-2 mt-8">
-                            <a [##_prev_page_##] class="px-4 py-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-sm text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors [##_no_more_prev_##]">Previous</a>
-                            <s_paging_rep>
-                                <a [##_paging_rep_link_##] class="px-4 py-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-sm text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">[##_paging_rep_link_num_##]</a>
-                            </s_paging_rep>
-                            <a [##_next_page_##] class="px-4 py-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-sm text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors [##_no_more_next_##]">Next</a>
-                        </div>
-                    </s_paging>
-
-                </main>
-
-                <!-- Sidebar (Right) -->
-                <aside class="hidden lg:block lg:col-span-4 space-y-8">
-                     <s_sidebar>
-                        <!-- Basic Sidebar Element Example -->
-                        <s_sidebar_element>
-                            <!-- Profile -->
-                            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-6 border border-gray-100 dark:border-gray-700 text-center">
-                                <img src="[##_image_##]" alt="Profile" class="w-24 h-24 rounded-full mx-auto mb-4 border-2 border-brand-100 dark:border-gray-700 object-cover">
-                                <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-1">[##_blogger_##]</h3>
-                                <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">[##_desc_##]</p>
-                            </div>
-                        </s_sidebar_element>
-
-                        <s_sidebar_element>
-                            <!-- Category -->
-                            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-6 border border-gray-100 dark:border-gray-700">
-                                <h3 class="text-sm font-bold uppercase tracking-wider text-gray-400 dark:text-gray-500 mb-4">Categories</h3>
-                                <div class="sidebar-category text-sm text-gray-600 dark:text-gray-300">
-                                    [##_category_##]
-                                </div>
-                            </div>
-                        </s_sidebar_element>
-                         
-                         <!-- TOC Widget Placeholder (Sticky) -->
-                         <div id="toc-container" class="sticky top-24 bg-white dark:bg-gray-800 rounded-xl shadow-sm p-6 border border-gray-100 dark:border-gray-700 hidden">
-                             <h3 class="text-sm font-bold uppercase tracking-wider text-gray-400 dark:text-gray-500 mb-4">On this page</h3>
-                             <ul id="toc-list" class="space-y-2 text-sm text-gray-600 dark:text-gray-400 custom-scrollbar max-h-[70vh] overflow-y-auto">
-                                 <!-- JS will populate this -->
-                             </ul>
-                         </div>
-
-                     </s_sidebar>
-                </aside>
+            <button
+              id="theme-toggle"
+              class="theme-toggle"
+              type="button"
+              aria-label="Toggle color theme"
+              aria-pressed="false"
+              title="Toggle theme"
+              >
+              <span class="material-icons-outlined theme-icon theme-icon-moon">dark_mode</span>
+              <span class="material-icons-outlined theme-icon theme-icon-sun">light_mode</span>
+            </button>
+            <div id="header-ico">
+              <button class="btn_topMenu" id="btn_topbtn" aria-label="topMenu">
+                <div class="menu-icon"></div>
+                <div class="menu-icon"></div>
+                <div class="menu-icon"></div>
+              </button>
             </div>
+          </div>
         </div>
-
-        <!-- Footer -->
-        <footer class="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 mt-20 py-12">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-500 dark:text-gray-400 text-sm">
-                <p>&copy; [##_today_##] [##_blogger_##]. All rights reserved.</p>
-                <p class="mt-2">Powered by <a href="https://tistory.com" target="_blank" class="hover:text-brand-600">Tistory</a></p>
+      </header>
+      <div class="dimmed"></div>
+      <div class="dropdown-content">
+        <div class="lb-data">
+          <div class="btn_close">
+            <span class="material-icons-outlined close-icon">close</span>
+          </div>
+        </div>
+        <div class="dropdown-profile">
+          <div class="dropdown-profile_info">
+            <div class="dropdown-profile_info-inner">
+              <a target="_blank" href=
+              <s_if_var_githubUserId>"https://github.com/[##_var_githubUserId_##]"</s_if_var_githubUserId>
+              <s_not_var_githubUserId>"[##_blog_link_##]"</s_not_var_githubUserId>
+              >
+              <img 
+                width="60px"
+                height="60px"
+                src="[##_image_##]"
+                alt="프로필 사진"
+                />
+              <div class="dropdown-profile-text">
+                <p class="dropdown-profile-title">[##_title_##]</p>
+                <s_if_var_githubUserId>
+                  <p class="github-link">github: @[##_var_githubUserId_##]</p>
+                </s_if_var_githubUserId>
+              </div>
+              </a>
             </div>
+          </div>
+        </div>
+        <div id="menubar_wrapper"></div>
+        <div id="dropdown-menu">[##_category_list_##]</div>
+      </div>
+      <div id="wrap">
+      <div id="container">
+        <nav id="gnb">
+          <div class="header-blog-menu">[##_blog_menu_##]</div>
+          <s_if_var_adsenseClientId>
+            <s_if_var_adsArticleTop>
+              <div class="ads-wrap article-top">
+                <ins
+                  class="adsbygoogle"
+                  style="display: block"
+                  data-ad-client="[##_var_adsenseClientId_##]"
+                  data-ad-slot="[##_var_adsArticleTop_##]"
+                  data-ad-format="auto"
+                  data-full-width-responsive="true"
+                  >
+                </ins>
+                <script>
+                  (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+              </div>
+            </s_if_var_adsArticleTop>
+          </s_if_var_adsenseClientId>
+        </nav>
+        <div id="main" role="main" class="sidebarPosition right">
+          <div id="content">
+            [##_revenue_list_upper_##]
+            <s_article_rep>
+              <section class="h-entry">
+                <div class="content-width">
+                  <s_index_article_rep>
+                    <div class="list_content">
+                      <div class="index_wrap">
+                        <a href="[##_article_rep_link_##]" class="post_link">
+                          <div class="thumnail">
+                            <s_article_rep_thumbnail>
+                              <img
+                                width="120"
+                                height="120"
+                                src="//i1.daumcdn.net/thumb/C120x120/?fname=[##_article_rep_thumbnail_raw_url_##]"
+                                alt="[##_article_rep_title_##]"
+                                />
+                            </s_article_rep_thumbnail>
+                          </div>
+                          <div class="list_detail_wrap">
+                            <h2 class="post_title">
+                              [##_article_rep_title_##]
+                            </h2>
+                            <p class="post_text">
+                              [##_article_rep_summary_##]
+                            </p>
+                          </div>
+                        </a>
+                        <ul class="post_list">
+                          <li class="post_category">
+                            <span
+                              class="material-icons-outlined"
+                              >format_list_bulleted</span
+                              >
+                            <span class="post_category_name">
+                            [##_article_rep_category_##]</span
+                              >
+                          </li>
+                          <li class="post_date">
+                            &middot; [##_article_rep_simple_date_##]
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </s_index_article_rep>
+                  <s_permalink_article_rep>
+                    <header class="hd">
+                      <div class="sub-info">
+                        <span class="meta-cate">
+                        <a
+                          href="[##_article_rep_category_link_##]"
+                          class="p-category"
+                          >[##_article_rep_category_##]</a
+                          >
+                        &middot; [##_rctps_rep_simple_date_##]
+                        </span>
+                        <s_ad_div>
+                          </span>
+                          <span class="admin-menu"
+                            ><a href="[##_s_ad_m_link_##]">수정</a></span
+                            >
+                          <span class="admin-menu"
+                            ><a href="#" onclick="[##_s_ad_s2_onclick_##]"
+                            >[##_s_ad_s1_label_##]</a
+                            ></span
+                            >
+                        </s_ad_div>
+                        <span class="wide-button-wrap">
+                        <a href="#" class="widely-text" id="widen-btn">
+                        <span class="material-icons-outlined wide-icon"
+                          >fullscreen</span
+                          >
+                        <span>넓게보기</span>
+                        </a>
+                        <a
+                          href="#"
+                          class="widely-text"
+                          id="original-btn"
+                          style="display: none"
+                          >
+                        <span class="material-icons-outlined wide-icon"
+                          >fullscreen_exit</span
+                          >
+                        <span>원래대로</span>
+                        </a>
+                        </span>
+                      </div>
+                      <h1 class="hd-heading">[##_article_rep_title_##]</h1>
+                    </header>
+                    <div class="e-content post-content">
+                      [##_article_rep_desc_##]
+                    </div>
+                    <s_tag_label>
+                      <div class="entry-tag">[##_tag_label_rep_##]</div>
+                    </s_tag_label>
+                    <s_article_related>
+                      <div class="area_related_wrap">
+                        <div class="related_table">
+                          <div class="related_header">
+                            <div class="area_title_wrap">
+                              <strong class="tit_related"
+                                >[##_article_rep_category_##] 관련 글</strong
+                                >
+                            </div>
+                            <div class="area_btn_more_wrap">
+                              <a
+                                href="[##_article_rep_category_link_##]"
+                                class="link_more"
+                                >더 보기</a
+                                >
+                            </div>
+                          </div>
+                        </div>
+                        <ul class="list_related">
+                          <s_article_related_rep>
+                            <li
+                              class="[##_article_related_rep_type_##] list_item"
+                              >
+                              <a
+                                href="[##_article_related_rep_link_##]"
+                                class="area_info"
+                                >
+                                <div class="title">
+                                  <span
+                                    >[##_article_related_rep_title_##]</span
+                                    >
+                                </div>
+                                <div class="list_date">
+                                  <span
+                                    >[##_article_related_rep_date_##]</span
+                                    >
+                                </div>
+                              </a>
+                            </li>
+                          </s_article_related_rep>
+                        </ul>
+                      </div>
+                    </s_article_related>
+                    <s_if_var_adsenseClientId>
+                      <s_if_var_adsArticleBottom>
+                        <div
+                          aria-hidden="true"
+                          class="ads-wrap article-bottom"
+                          >
+                          <ins
+                            class="adsbygoogle"
+                            style="display: block"
+                            data-ad-client="[##_var_adsenseClientId_##]"
+                            data-ad-slot="[##_var_adsArticleBottom_##]"
+                            data-ad-format="auto"
+                            data-full-width-responsive="false"
+                            >
+                          </ins>
+                          <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                          </script>
+                        </div>
+                      </s_if_var_adsArticleBottom>
+                    </s_if_var_adsenseClientId>
+                    <div class="post-reply">
+                      <s_not_var_disableComment>
+                        <s_rp> [##_comment_group_##] </s_rp>
+                      </s_not_var_disableComment>
+                    </div>
+                    <script>
+                      <s_if_var_enableAutoTOC>
+                        var contentContainer=document.querySelector(".e-content.post-content");if(contentContainer){var tocSpace=document.createElement("div");tocSpace.classList.add("toc-space"),contentContainer.insertBefore(tocSpace,contentContainer.firstChild);var headings=contentContainer.querySelectorAll("h2, h3");if(headings.length>0){var tocContainer=document.createElement("div");tocContainer.classList.add("toc-wrap");var ulContainer=document.createElement("ul");ulContainer.classList.add("toc"),headings.forEach((function(t,e){var n=document.createElement("li");n.classList.add("toc-item");var o=document.createElement("a");o.href="#section-"+e,o.textContent=t.textContent,"H2"===t.tagName?n.classList.add("h2"):"H3"===t.tagName&&n.classList.add("h3"),n.appendChild(o),ulContainer.appendChild(n),t.id="section-"+e,o.addEventListener("click",(function(t){t.preventDefault();var e=document.querySelector(o.getAttribute("href"));if(e){var n=(window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth)>=450?120:80,c=e.offsetTop+n;window.scrollTo({top:c,behavior:"smooth"})}}))}));var tocTitle=document.createElement("strong");tocTitle.textContent="목차";var tocIcon=document.createElement("div");tocIcon.classList.add("toc-icon");var tocTitleContainer=document.createElement("div");tocTitleContainer.classList.add("toc-title"),tocTitleContainer.appendChild(tocIcon),tocTitleContainer.appendChild(tocTitle),tocContainer.appendChild(tocTitleContainer),tocContainer.appendChild(ulContainer),tocSpace.appendChild(tocContainer)}}
+                      </s_if_var_enableAutoTOC>
+                      document.addEventListener("DOMContentLoaded",(function(){var e=document.querySelectorAll(".e-content.post-content img");if(e.forEach((function(e,t){var n=e.getAttribute("alt"),i=e.getAttribute("data-filename");n||e.setAttribute("alt",i||"etc-image-"+t)})),0<e.length){var t=function(){if(0<window.pageYOffset){var e=blockedStylesheets.find((function(e){return e.href.includes("lightbox")}));e&&loadStylesheet(e.href),(e=blockedScripts.find((function(e){return e.src.includes("lightbox")})))&&loadScript(e.src).then((function(){var e=lightbox;e.options.fadeDuration=200,e.options.resizeDuration=200,e.options.wrapAround=!1,e.options.albumLabel="%1 / %2"})).catch((function(){})),window.removeEventListener("scroll",t)}};window.addEventListener("scroll",t,{passive:!0})}var n=document.getElementById("widen-btn"),i=document.getElementById("original-btn"),o=document.querySelector("#container #main #sidebar"),l=document.querySelector(".h-entry .content-width");n&&i&&o&&l&&(n.addEventListener("click",(function(e){e.preventDefault(),o.style.display="none",n.style.display="none",i.style.display="inline-block",l.classList.add("wide")})),i.addEventListener("click",(function(e){e.preventDefault(),o.style.display="block",i.style.display="none",n.style.display="inline-block",l.classList.remove("wide")})))}));
+                    </script>
+                  </s_permalink_article_rep>
+                </div>
+              </section>
+            </s_article_rep>
+            <s_tag>
+              <section id="taglog">
+                <div class="content-width">
+                  <header class="hd">
+                    <h1 class="hd-heading">태그 클라우드</h1>
+                  </header>
+                  <div class="module-tag">
+                    <ul class="tag-list">
+                      <s_tag_rep>
+                        <li>
+                          <a href="[##_tag_link_##]" class="[##_tag_class_##]" aria-label="[##_tag_name_##] 관련 글로 이동" >#[##_tag_name_##]</a>
+                        </li>
+                      </s_tag_rep>
+                    </ul>
+                  </div>
+                </div>
+              </section>
+            </s_tag>
+            <s_guest>
+              <section id="guestbook">
+                <div class="content-width">
+                  <header class="hd">
+                    <h1 class="hd-heading">방명록</h1>
+                    <div class="sub-info">
+                      <span>소중한 메세지를 담아둡니다.</span>
+                    </div>
+                  </header>
+                  <div class="post-reply">[##_guestbook_group_##]</div>
+                </div>
+              </section>
+            </s_guest>
+            <s_notice_rep>
+              <section class="h-entry notice">
+                <div class="content-width">
+                  <s_index_article_rep>
+                    <div class="list_content">
+                      <div class="index_wrap">
+                        <a href="[##_notice_rep_link_##]" class="post_link">
+                          <div class="list_detail_wrap">
+                            <h2 class="post_title">
+                              [##_notice_rep_title_##]
+                            </h2>
+                            <p class="post_text">
+                              [##_notice_rep_summary_##]
+                            </p>
+                            <ul class="post_list">
+                              <li class="post_category">공지사항</li>
+                              <li class="post_date">
+                                ・[##_article_rep_simple_date_##]
+                              </li>
+                            </ul>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </s_index_article_rep>
+                  <s_permalink_article_rep>
+                    <header class="hd">
+                      <div class="sub-info">
+                        <span class="meta-cate"
+                          ><a href="/notice">공지사항</a></span
+                          >・[##_article_rep_simple_date_##]
+                      </div>
+                      <h1 class="hd-heading">
+                        <a href="[##_notice_rep_link_##]"
+                          >[##_notice_rep_title_##]</a
+                          >
+                      </h1>
+                    </header>
+                    <div class="e-content post-content">
+                      [##_notice_rep_desc_##]
+                    </div>
+                  </s_permalink_article_rep>
+                </div>
+              </section>
+            </s_notice_rep>
+            <s_article_protected>
+              <section class="h-entry protected">
+                <div class="content-width">
+                  <s_index_article_rep>
+                    <div class="list_content">
+                      <div class="index_wrap">
+                        <a href="[##_article_rep_link_##]" class="post_link">
+                          <div class="list_detail_wrap">
+                            <h2 class="post_title">
+                              [##_article_rep_title_##]
+                            </h2>
+                            <p class="post_text">보호되어 있는 글입니다.</p>
+                            <ul class="post_list">
+                              <li class="post_category">
+                                <span class="material-icons-outlined">format_list_bulleted</span>
+                                <span class="post_category_name">
+                                [##_article_rep_category_##]</span>
+                              </li>
+                              <li class="post_date">
+                                &middot; [##_article_rep_simple_date_##]
+                              </li>
+                            </ul>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </s_index_article_rep>
+                  <s_permalink_article_rep>
+                    <header class="hd">
+                      <div class="sub-info">
+                        <span class="meta-cate">
+                        <a
+                          href="[##_article_rep_category_link_##]"
+                          class="p-category"
+                          >[##_article_rep_category_##]</a
+                          >
+                        </span>
+                        ・[##_rctps_rep_simple_date_##]
+                      </div>
+                      <h1 class="hd-heading">
+                        <a href="[##_article_rep_link_##]">[##_article_rep_title_##]</a>
+                      </h1>
+                    </header>
+                    <div class="e-content">
+                      <div class="media-wrap">
+                        <div class="media">
+                          <div class="media-body">
+                            <h2 class="media-heading">PROTECTED</h2>
+                          </div>
+                          <div class="textbox focus-wrap">
+                            <input
+                              id="[##_article_password_##]"
+                              class="focus-target"
+                              name="[##_article_password_##]"
+                              type="password"
+                              onkeydown="if (event.keyCode==13) [##_article_dissolve_##]"
+                              placeholder="비밀번호"
+                              />
+                            <button
+                              type="button"
+                              class="media_btn"
+                              onclick="[##_article_dissolve_##]"
+                              >
+                            확인
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </s_permalink_article_rep>
+                </div>
+              </section>
+            </s_article_protected>
+            <s_list>
+              <section id="no-search-results">
+                <div class="content-width">
+                  <s_list_empty>
+                    <header class="hd index_s_list">
+                      <div class="sub-info">
+                        <div class="not-found">
+                          <ul>
+                            <li>
+                              입력하신 단어가 정확한지 확인해 보세요.
+                            </li>
+                            <li>
+                              검색어의 단어 수를 줄이거나, 보다 일반적인
+                              단어로 검색해 보세요.
+                            </li>
+                            <li>
+                              두 단어 이상의 키워드로 검색 하신 경우, 정확하게
+                              띄어쓰기를 한 후 검색해 보세요.
+                            </li>
+                          </ul>
+                          <ul class="tag">
+                            <li>선택하신 태그에 해당하는 글이 없습니다.</li>
+                            <li>
+                              다른 태그를 선택하시거나, 검색 기능을 활용해
+                              보세요.
+                            </li>
+                          </ul>
+                          <ul class="category">
+                            <li>
+                              선택하신 카테고리에 해당하는 글이 없습니다.
+                            </li>
+                            <li>
+                              다른 카테고리를 선택하시거나, 검색 기능을 활용해
+                              보세요.
+                            </li>
+                          </ul>
+                          <ul class="archive">
+                            <li>선택하신 기간에 등록된 글이 없습니다.</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </header>
+                  </s_list_empty>
+                </div>
+              </section>
+            </s_list>
+            [##_revenue_list_lower_##]
+            <s_paging>
+              <div id="paging">
+                <ul class="pagination">
+                  <li class="prevpage">
+                    <a [##_prev_page_##] class="[##_no_more_prev_##]" aria-label="prevPage" id="prevPage" rel="prev">
+                    <span class="material-icons-outlined page-icon">navigate_before</span>
+                    </a>
+                  </li>
+                  <s_paging_rep>
+                    <li>
+                      <a [##_paging_rep_link_##] class="num" aria-label="pageNumber">[##_paging_rep_link_num_##]</a>
+                    </li>
+                  </s_paging_rep>
+                  <li class="nextpage">
+                    <a [##_next_page_##] class="[##_no_more_next_##]" aria-label="nextPage" id="nextPage" rel="next">
+                    <span class="material-icons-outlined page-icon" >navigate_next</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <script>
+                document.addEventListener("DOMContentLoaded",(function(){document.querySelectorAll("#paging li a").forEach((function(t){t.getAttribute("href")||t.setAttribute("href","#")}))}));
+              </script>
+            </s_paging>
+          </div>
+          <aside id="sidebar" class="right">
+            <s_sidebar>
+              <s_sidebar_element>
+                <!-- 짧은 사이드 광고 -->
+                <s_if_var_adsenseClientId>
+                  <s_if_var_adsSideShort>
+                    <div class="module side-ads">
+                      <div aria-hidden="true" class="ads-wrap side-short">
+                        <style type="text/css">
+                          .ads_side_short{width:100%;height:250px}@media (max-width:1023px){.ads_side_short{width:100%;height:200px}}
+                        </style>
+                        <ins class="adsbygoogle ads_side_short" style="display: block" data-ad-client="[##_var_adsenseClientId_##]" data-ad-slot="[##_var_adsSideShort_##]" data-full-width-responsive="false">
+                        </ins>
+                        <script>
+                          (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                      </div>
+                    </div>
+                  </s_if_var_adsSideShort>
+                </s_if_var_adsenseClientId>
+              </s_sidebar_element>
+              <s_sidebar_element>
+                <!-- 긴 사이드 광고 -->
+                <s_if_var_adsenseClientId>
+                  <s_if_var_adsSideLong>
+                    <div class="module side-ads">
+                      <div aria-hidden="true" class="ads-wrap side-long">
+                        <style type="text/css">
+                          .ads_side_long{width:100%;height:600px}@media (max-width:1023px){.ads_side_long{width:100%;height:250px}}
+                        </style>
+                        <ins class="adsbygoogle ads_side_long" style="display: block" data-ad-client="[##_var_adsenseClientId_##]" data-ad-slot="[##_var_adsSideLong_##]" data-full-width-responsive="false">
+                        </ins>
+                        <script>
+                          (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                      </div>
+                    </div>
+                  </s_if_var_adsSideLong>
+                </s_if_var_adsenseClientId>
+              </s_sidebar_element>
+              <s_sidebar_element>
+                <!-- 공지사항 -->
+                <div class="module module-notice">
+                  <a href="/notice">
+                    <div class="module-title">
+                      <span>공지사항</span>
+                    </div>
+                  </a>
+                  <div class="module-content">
+                    <s_rct_notice>
+                      <ul id="module-notice-ul">
+                        <s_rct_notice_rep>
+                          <li class="notice-list">
+                            <a href="[##_notice_rep_link_##]"
+                              >[##_notice_rep_title_##]</a
+                              >
+                          </li>
+                        </s_rct_notice_rep>
+                      </ul>
+                    </s_rct_notice>
+                  </div>
+                </div>
+              </s_sidebar_element>
+              <s_sidebar_element>
+                <!-- 카테고리 -->
+                <div class="module module-category" id="sidebar-category">
+                  <a href="/category">
+                    <div class="module-title">
+                      <span>전체 카테고리</span>
+                    </div>
+                  </a>
+                  <div class="module-content tt-cate">
+                    [##_category_list_##]
+                  </div>
+                </div>
+              </s_sidebar_element>
+              <s_sidebar_element>
+                <!--인기 글 -->
+                <div class="module popularPost">
+                  <div class="module-title">
+                    <span>인기 글</span>
+                  </div>
+                  <s_rctps_popular_rep>
+                    <div class="popularPost-list">
+                      <a href="[##_rctps_rep_link_##]">
+                        <div class="popularPost-info">
+                          <div class="right-pop right">
+                            <div class="popular-right">
+                              <span>[##_rctps_rep_title_##]</span>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </s_rctps_popular_rep>
+                </div>
+              </s_sidebar_element>
+              <s_sidebar_element>
+                <!-- 방문자 수 -->
+                <div class="module module-visitor">
+                  <div class="module-title">
+                    <span>전체 방문자</span>
+                  </div>
+                  <div class="module-content visitor">
+                    <span class="ff-h total visitor-date"
+                      >[##_count_total_##]</span
+                      >
+                  </div>
+                  <div class="module-content visitor">
+                    <div class="visitor-row">
+                      <span class="visitor-cell">오늘</span>
+                      <span class="ff-h today visitor-date"
+                        >[##_count_today_##]</span
+                        >
+                    </div>
+                    <div class="visitor-row">
+                      <span class="visitor-cell">어제</span>
+                      <span class="ff-h yesterday visitor-date"
+                        >[##_count_yesterday_##]</span
+                        >
+                    </div>
+                  </div>
+                </div>
+              </s_sidebar_element>
+            </s_sidebar>
+          </aside>
+        </div>
+      </div>
+      <div class="footer-wrap">
+        <footer id="footer">
+          <div class="ft-writer">
+            Copyright © <a href="[##_blog_link_##]">[##_blogger_##]</a> 모든 권리 보유.
+          </div>
         </footer>
-
-        <!-- Scroll to Top Button -->
-        <button 
-            x-data="{ show: false }" 
-            @scroll.window="show = (window.pageYOffset > 300)" 
-            x-show="show" 
-            x-transition
-            @click="window.scrollTo({top: 0, behavior: 'smooth'})" 
-            class="fixed bottom-8 right-8 p-3 rounded-full bg-brand-600 hover:bg-brand-500 text-white shadow-lg z-40 transition-all transform hover:-translate-y-1"
-            style="display: none;"
-        >
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
-        </button>
-
-    </div>
+        <div id="ft-skin">
+          SKIN: Copyright ©
+          <a href="https://toyou101.tistory.com">쭈미로운 생활</a> All rights reserved.
+            Designed by <a href="https://toyou101.tistory.com">JJuum</a>.<br>
+            and Current skin "dev-roo" is modified by <a href="https://github.com/denev6">Jin</a>.
+        </div>
+      </div>
     </s_t3>
-    
-    <!-- Core Script -->
-    <script src="./images/script.js"></script>
-</body>
+    <script>
+      document.addEventListener("DOMContentLoaded",(function(){mutationObserver.disconnect();var t=!1,e=!1,n=!1,o=document.querySelectorAll(".post-reply, .container_postbtn, pre code"),c=new IntersectionObserver((function(n,o){n.forEach((function(n){!function(n,o){if(n.isIntersecting){if(n.target.classList.contains("post-reply")){var c=blockedStylesheets.find((function(t){return t.href.includes("comment")}));c&&loadStylesheet(c.href),(c=blockedScripts.find((function(t){return t.src.includes("comment")})))&&loadScript(c.src).then((function(){var t=new Event("load");window.dispatchEvent(t)})).catch((function(){}))}else n.target.classList.contains("container_postbtn")?e||((c=blockedStylesheets.find((function(t){return t.href.includes("postBtn")})))&&loadStylesheet(c.href),(c=blockedScripts.find((function(t){return t.src.includes("reaction-button-container")})))&&loadScript(c.src),n.target.style.visibility="visible",e=!0):"PRE"!==n.target.parentElement.tagName||"CODE"!==n.target.tagName||t||(loadStylesheet("./images/code-light.css"),loadStylesheet("./images/code-dark.css"),loadScript("./images/highlight.js").then((function(){window.hljs&&typeof window.hljs.highlightAll==="function"&&window.hljs.highlightAll().catch((function(){}))})).catch((function(){})),t=!0);o.unobserve(n.target)}}(n,o)}))}),{root:null,rootMargin:"200px",threshold:.2});o.forEach((function(t){c.observe(t)})),window.addEventListener("scroll",(function(){var t=(document.body.scrollTop||document.documentElement.scrollTop)/(document.documentElement.scrollHeight-document.documentElement.clientHeight)*100,e=document.getElementById("progress");e&&(e.style.width=t+"%")}),{passive:!0});var r=document.getElementById("header_wrap");r&&window.addEventListener("scroll",(function(){50<window.scrollY?r.classList.add("shrink"):r.classList.remove("shrink")}),{passive:!0}),(o=document.querySelector(".btn_topMenu"))&&o.addEventListener("click",(function(t){if(t.stopPropagation(),t=document.querySelector(".dropdown-content")){if(!n){var e=blockedScripts.find((function(t){return t.src.includes("menubar.min")}));e&&loadScript(e.src),n=!0}(td=document.querySelector(".dimmed"))&&td.classList.toggle("show"),t.classList.toggle("dropdown-content-toggle")}})),[document.querySelector(".btn_close"),document.querySelector(".dimmed")].forEach((function(t){t.addEventListener("click",(function(t){t.stopPropagation(),(td=document.querySelector(".dimmed"))&&td.classList.remove("show"),(t=document.querySelector(".dropdown-content"))&&t.classList.remove("dropdown-content-toggle")}))})),document.querySelectorAll(".post_category_name").forEach((function(t){var e=t.textContent.trim().split("/")[1];e&&(t.textContent=e.trim())})),document.querySelectorAll(".p-category").forEach((function(t){var e=t.textContent.split("/")[1];e&&(t.textContent=e.trim())})),document.querySelectorAll("iframe").forEach((function(t){var e=t.getAttribute("name");t.setAttribute("title",e||"inner iframe")})),(o=document.getElementById("content"))&&o.classList.add("show"),window.addEventListener("scroll",(function t(){if(0<window.pageYOffset){var e=blockedScripts.find((function(t){return t.src.includes("googletagmanager.com/gtag/js?id")}));e&&loadScript(e.src).then((function(){var t=document.createElement("script");t.innerHTML=blockedScriptContents[0].textContent,document.head.appendChild(t)})).catch((function(){})),window.removeEventListener("scroll",t)}}),{passive:!0})}));
+    </script>
+    <script>
+      (function(){
+        var storageKey="tistory-theme";
+        var root=document.documentElement;
+        var toggleBtn;
+        function getStoredTheme(){
+          try{return localStorage.getItem(storageKey);}catch(e){return null;}
+        }
+        function setStoredTheme(theme){
+          try{localStorage.setItem(storageKey,theme);}catch(e){}
+        }
+        function applyTheme(theme){
+          root.setAttribute("data-theme",theme);
+          if(!toggleBtn){return;}
+          var isDark=theme==="dark";
+          toggleBtn.setAttribute("aria-pressed",isDark?"true":"false");
+          toggleBtn.setAttribute("aria-label",isDark?"Switch to light mode":"Switch to dark mode");
+          toggleBtn.setAttribute("title",isDark?"Switch to light mode":"Switch to dark mode");
+        }
+        function init(){
+          toggleBtn=document.getElementById("theme-toggle");
+          var stored=getStoredTheme();
+          if(stored==="light"||stored==="dark"){
+            applyTheme(stored);
+          }else{
+            var system=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";
+            applyTheme(system);
+            if(window.matchMedia){
+              var mql=window.matchMedia("(prefers-color-scheme: dark)");
+              var handler=function(e){
+                var current=getStoredTheme();
+                if(current!=="light"&&current!=="dark"){
+                  applyTheme(e.matches?"dark":"light");
+                }
+              };
+              if(mql.addEventListener){
+                mql.addEventListener("change",handler);
+              }else if(mql.addListener){
+                mql.addListener(handler);
+              }
+            }
+          }
+          if(toggleBtn){
+            toggleBtn.addEventListener("click",function(){
+              var current=root.getAttribute("data-theme")==="dark"?"dark":"light";
+              var next=current==="dark"?"light":"dark";
+              applyTheme(next);
+              setStoredTheme(next);
+            });
+          }
+        }
+        if(document.readyState==="loading"){
+          document.addEventListener("DOMContentLoaded",init);
+        }else{
+          init();
+        }
+      })();
+    </script>
+    <s_if_var_devRooStyle>
+      <script>
+        document.addEventListener("DOMContentLoaded",(function(){document.querySelectorAll("[data-ke-style='style3']").forEach((t=>{if((e=t.innerHTML.trimStart()).startsWith("@danger")||e.startsWith("@warning")){var e=e.split("<br>",2);t.setAttribute("style",`background-color: var(--${e[0].slice(1).trim()}) !important`),t.innerHTML=e[1]}})),document.querySelectorAll("[data-ke-type='moreLess']").forEach((t=>{var e=t.children[1].children[0],r=e.innerText;r.startsWith("@")&&(r=r.slice(1).trimStart(),t.children[0].innerText=r,t.setAttribute("data-text-more",r),e.remove())}))}));
+      </script>
+      <style type="text/css">
+        .post-content p code,.post-content li code,.post-content u{padding:.2em .4em;text-decoration:none;border-radius:4px;background-color:var(--code-inline-bg);border:1px solid var(--code-inline-border)}
+      </style>
+    </s_if_var_devRooStyle>
+    <s_if_var_enableMathjax>
+      <script>
+        MathJax={startup:{elements:[".e-content.post-content"],typeset:!0},tex:{inlineMath:[["$","$"],["\\(","\\)"]]}};
+      </script>
+      <script id="MathJax-script" async src="//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </s_if_var_enableMathjax>
+    <!-- Block Highlight.js CDN from unknown -->
+    <script>
+      const highlightJsCDN="cdnjs.cloudflare.com/ajax/libs/highlight.js";window.onload=function(){document.querySelectorAll("script, link").forEach(e=>{(e.src?.includes(highlightJsCDN)||e.href?.includes(highlightJsCDN))&&e.remove()})};const observer=new MutationObserver(e=>{e.forEach(e=>{e.addedNodes.forEach(e=>{("SCRIPT"===e.tagName||"LINK"===e.tagName)&&(e.src?.includes(highlightJsCDN)||e.href?.includes(highlightJsCDN))&&e.remove()})})});observer.observe(document.documentElement,{childList:!0,subtree:!0});
+    </script>
+  </body>
 </html>
