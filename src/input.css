@@ -79,8 +79,8 @@
         @apply font-mono text-sm;
     }
 
-    /* Inline Code Styling Override */
-    .prose :not(pre)>code {
+    /* Inline Code Styling (Base) */
+    .prose code {
         @apply px-1.5 py-0.5 rounded bg-slate-100 dark:bg-gray-800 text-pink-500 dark:text-pink-400 font-medium;
     }
 
@@ -88,4 +88,39 @@
     .prose u {
         @apply px-1.5 py-0.5 rounded bg-slate-100 dark:bg-gray-800 text-brand-600 dark:text-brand-400 font-medium no-underline;
     }
-}
+
+    /* Code Block Styling (Clean Mac Dark Style) - Overrides Base Code Style */
+    .prose pre {
+        @apply rounded-xl bg-[#1e1e1e] dark:bg-[#1e1e1e] shadow-xl relative pt-12 pb-6 px-6 overflow-hidden !important;
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        font-family: 'JetBrains Mono', 'D2Coding', monospace !important;
+    }
+
+    /* Mac Window Controls (Traffic Lights) */
+    .prose pre::before {
+        content: "";
+        position: absolute;
+        top: 18px;
+        left: 20px;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: #ff5f56;
+        box-shadow: 20px 0 0 #ffbd2e, 40px 0 0 #27c93f;
+        opacity: 1;
+    }
+
+    /* Reset Code inside Pre (Block) to prevent double styling */
+    .prose pre code {
+        background-color: transparent !important;
+        color: #d4d4d4 !important;
+        padding: 0 !important;
+        border-radius: 0 !important;
+        font-weight: normal !important;
+        font-family: inherit !important;
+        font-size: 0.9em !important;
+        line-height: 1.7 !important;
+        text-shadow: none !important;
+        box-shadow: none !important;
+        /* Ensure no shadow from inline style */
+    }
