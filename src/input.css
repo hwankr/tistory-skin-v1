@@ -3,24 +3,53 @@
 @tailwind utilities;
 
 @layer base {
-  body {
-    @apply antialiased text-slate-800 bg-white dark:bg-gray-900 dark:text-slate-100;
-  }
+    body {
+        @apply antialiased text-slate-800 bg-white dark:bg-gray-900 dark:text-slate-100;
+    }
 }
 
 @layer components {
     .prose code {
         @apply bg-slate-100 dark:bg-gray-800 px-1.5 py-0.5 rounded text-sm text-pink-500 font-mono font-medium;
     }
-    
+
     /* Custom Scrollbar for TOC */
     .custom-scrollbar::-webkit-scrollbar {
         width: 4px;
     }
+
     .custom-scrollbar::-webkit-scrollbar-track {
         @apply bg-transparent;
     }
+
     .custom-scrollbar::-webkit-scrollbar-thumb {
         @apply bg-gray-200 dark:bg-gray-700 rounded;
+    }
+
+    /* Code Block Styling (Mac Style) */
+    .prose pre {
+        @apply rounded-xl bg-[#2d2d2d] dark:bg-[#1e1e1e] border border-gray-200 dark:border-gray-700 shadow-sm relative pt-10 !important;
+    }
+
+    .prose pre::before {
+        content: "";
+        position: absolute;
+        top: 14px;
+        left: 16px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: #ff5f56;
+        box-shadow: 20px 0 0 #ffbd2e, 40px 0 0 #27c93f;
+        z-index: 10;
+    }
+
+    .prose code {
+        @apply font-mono text-sm;
+    }
+
+    /* Inline Code Styling Override */
+    .prose :not(pre)>code {
+        @apply px-1.5 py-0.5 rounded bg-slate-100 dark:bg-gray-800 text-pink-500 dark:text-pink-400 font-medium;
     }
 }
