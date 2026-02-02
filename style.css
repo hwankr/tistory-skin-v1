@@ -1415,12 +1415,35 @@ body:is(.dark *) {
 
 /* Force Dark Mode Typography Contrast */
 
+/* Force Dark Mode Typography Contrast */
+
+.dark .prose {
+  color: #cbd5e1 !important;
+  /* Fallback */
+}
+
+.dark .prose p,
+    .dark .prose ul,
+    .dark .prose ol,
+    .dark .prose li,
+    .dark .prose blockquote {
+  color: #cbd5e1 !important;
+  /* slate-300 */
+}
+
 .dark .prose h1,
     .dark .prose h2,
     .dark .prose h3,
     .dark .prose h4,
-    .dark .prose strong {
-  color: var(--tw-prose-headings) !important;
+    .dark .prose strong,
+    .dark .prose b {
+  color: #f1f5f9 !important;
+  /* slate-100 */
+}
+
+.dark .prose a {
+  color: #38bdf8 !important;
+  /* sky-400 */
 }
 
 /* Code Block Styling (Mac Style) */
