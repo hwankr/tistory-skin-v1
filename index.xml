@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<skin>
+  <information>
+    <name>TistorySkin-V1</name>
+    <version>1.0</version>
+    <description>Premium Minimalist 2-Column Skin with Dark Mode</description>
+    <license>MIT</license>
+    <author>HwanKR</author>
+    <email></email>
+    <homepage>https://github.com/hwankr/tistory-skin-v1</homepage>
+  </information>
+  <author>
+    <name>HwanKR</name>
+    <homepage>https://github.com/hwankr/tistory-skin-v1</homepage>
+    <email></email>
+  </author>
+  <default>
+    <recentEntries>5</recentEntries>
+    <recentComments>5</recentComments>
+    <recentTrackbacks>5</recentTrackbacks>
+    <itemsOnIndex>10</itemsOnIndex>
+  </default>
+  <variables>
+    <variable>
+        <name>use_dark_mode</name>
+        <label>다크 모드 사용</label>
+        <type>BOOL</type>
+        <option />
+        <default>true</default>
+        <description>다크 모드 기능을 활성화합니다.</description>
+    </variable>
+  </variables>
+</skin>

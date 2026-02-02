@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[##_page_title_##]</title>
+    
+    <!-- Fonts: Pretendard CDN -->
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- Prism.js Themes (Will handle dark mode dynamically or use a specific one) -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="./style.css">
+
+    <style>
+        /* Tistory defaults override if necessary */
+        .tt_article_useless_p_margin p { margin-top: 0 !important; margin-bottom: 0 !important; }
+    </style>
+</head>
+<body id="[##_body_id_##]" x-data="themeData()" :class="{ 'dark': isDark }">
+
+    <!-- Skin Container -->
+    <s_t3>
+    <div class="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+        
+        <!-- Header -->
+        <header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 transition-colors duration-300">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center h-16">
+                    <!-- Logo -->
+                    <div class="flex-shrink-0 flex items-center">
+                        <a href="[##_blog_link_##]" class="font-bold text-xl text-slate-900 dark:text-white tracking-tight">
+                            [##_title_##]
+                        </a>
+                    </div>
+
+                    <!-- Desktop Nav & Actions -->
+                    <div class="flex items-center space-x-4">
+                        <!-- Dark Mode Toggle -->
+                        <button @click="toggleTheme()" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-600 dark:text-gray-300 transition-colors">
+                            <span x-show="!isDark">🌙</span>
+                            <span x-show="isDark" style="display: none;">☀️</span>
+                        </button>
+                        
+                        <!-- Search/Menu triggers can go here -->
+                        <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden p-2 rounded-md text-gray-600 dark:text-gray-300">
+                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div x-show="mobileMenuOpen" @click.away="mobileMenuOpen = false" class="md:hidden bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800" style="display: none;">
+                <nav class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                     <div class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:text-gray-900 hover:bg-gray-50 dark:hover:bg-gray-800">[##_blog_link_##]</div>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Main Layout -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12">
+            <div class="lg:grid lg:grid-cols-12 lg:gap-12"> <!-- 2 Column Layout -->
+                
+                <!-- Main Content (Left/Center) -->
+                <main class="lg:col-span-8 space-y-8">
+                    
+                    <!-- Post List -->
+                     <s_list>
+                        <div class="bg-white dark:bg-gray-800 shadow-sm rounded-xl overflow-hidden hover:shadow-md transition-shadow duration-300 border border-gray-100 dark:border-gray-700">
+                            <div class="p-6 sm:p-8">
+                                <span class="text-sm font-medium text-brand-600 dark:text-brand-400 mb-2 block">[##_list_rep_category_##]</span>
+                                <a href="[##_list_rep_link_##]" class="block mt-1">
+                                    <h2 class="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-3 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">
+                                        [##_list_rep_title_##]
+                                    </h2>
+                                    <p class="text-base text-gray-500 dark:text-gray-400 line-clamp-3 mb-4">
+                                        [##_list_rep_summary_##]
+                                    </p>
+                                </a>
+                                <div class="flex items-center text-sm text-gray-400 dark:text-gray-500">
+                                    <span class="mr-3">[##_list_rep_regdate_##]</span>
+                                    <span>댓글 [##_list_rep_rp_cnt_##]</span>
+                                </div>
+                            </div>
+                        </div>
+                    </s_list>
+
+                    <!-- Post Detail -->
+                     <s_article_rep>
+                        <article class="bg-white dark:bg-gray-800 shadow-sm rounded-xl overflow-hidden border border-gray-100 dark:border-gray-700">
+                             <s_permalink_article_rep>
+                                <div class="p-6 sm:p-10">
+                                    <header class="mb-8 border-b border-gray-100 dark:border-gray-700 pb-8">
+                                        <div class="flex items-center space-x-2 text-sm text-brand-600 dark:text-brand-400 font-medium mb-3">
+                                            <a href="[##_article_rep_category_link_##]">[##_article_rep_category_##]</a>
+                                        </div>
+                                        <h1 class="text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-white tracking-tight mb-4 leading-tight">
+                                            [##_article_rep_title_##]
+                                        </h1>
+                                        <div class="flex justify-between items-center text-sm text-gray-500 dark:text-gray-400">
+                                            <div class="flex items-center space-x-2">
+                                                <span>[##_article_rep_author_##]</span>
+                                                <span>&middot;</span>
+                                                <span>[##_article_rep_date_##]</span>
+                                            </div>
+                                            <s_ad_div>
+                                                <span><a href="[##_s_ad_m_link_##]" class="hover:text-gray-800 dark:hover:text-gray-300">수정</a></span>
+                                            </s_ad_div>
+                                        </div>
+                                    </header>
+                                    
+                                    <!-- Content Body -->
+                                    <div class="prose prose-lg prose-slate dark:prose-invert max-w-none break-keep">
+                                        [##_article_rep_desc_##]
+                                    </div>
+
+                                    <!-- Tags -->
+                                    <s_tag_label>
+                                        <div class="mt-10 flex flex-wrap gap-2">
+                                            <span class="text-gray-500 dark:text-gray-400 mr-2 py-1">Tags:</span>
+                                            [##_tag_label_rep_##]
+                                        </div>
+                                    </s_tag_label>
+
+                                </div>
+                             </s_permalink_article_rep>
+                        </article>
+                    </s_article_rep>
+
+                    <!-- Paging -->
+                    <s_paging>
+                        <div class="flex justify-center space-x-2 mt-8">
+                            <a [##_prev_page_##] class="px-4 py-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-sm text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors [##_no_more_prev_##]">Previous</a>
+                            <s_paging_rep>
+                                <a [##_paging_rep_link_##] class="px-4 py-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-sm text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">[##_paging_rep_link_num_##]</a>
+                            </s_paging_rep>
+                            <a [##_next_page_##] class="px-4 py-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-sm text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors [##_no_more_next_##]">Next</a>
+                        </div>
+                    </s_paging>
+
+                </main>
+
+                <!-- Sidebar (Right) -->
+                <aside class="hidden lg:block lg:col-span-4 space-y-8">
+                     <s_sidebar>
+                        <!-- Basic Sidebar Element Example -->
+                        <s_sidebar_element>
+                            <!-- Profile -->
+                            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-6 border border-gray-100 dark:border-gray-700 text-center">
+                                <img src="[##_image_##]" alt="Profile" class="w-24 h-24 rounded-full mx-auto mb-4 border-2 border-brand-100 dark:border-gray-700 object-cover">
+                                <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-1">[##_blogger_##]</h3>
+                                <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">[##_desc_##]</p>
+                            </div>
+                        </s_sidebar_element>
+
+                        <s_sidebar_element>
+                            <!-- Category -->
+                            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-6 border border-gray-100 dark:border-gray-700">
+                                <h3 class="text-sm font-bold uppercase tracking-wider text-gray-400 dark:text-gray-500 mb-4">Categories</h3>
+                                <div class="sidebar-category text-sm text-gray-600 dark:text-gray-300">
+                                    [##_category_##]
+                                </div>
+                            </div>
+                        </s_sidebar_element>
+                         
+                         <!-- TOC Widget Placeholder (Sticky) -->
+                         <div id="toc-container" class="sticky top-24 bg-white dark:bg-gray-800 rounded-xl shadow-sm p-6 border border-gray-100 dark:border-gray-700 hidden">
+                             <h3 class="text-sm font-bold uppercase tracking-wider text-gray-400 dark:text-gray-500 mb-4">On this page</h3>
+                             <ul id="toc-list" class="space-y-2 text-sm text-gray-600 dark:text-gray-400 custom-scrollbar max-h-[70vh] overflow-y-auto">
+                                 <!-- JS will populate this -->
+                             </ul>
+                         </div>
+
+                     </s_sidebar>
+                </aside>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 mt-20 py-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-500 dark:text-gray-400 text-sm">
+                <p>&copy; [##_today_##] [##_blogger_##]. All rights reserved.</p>
+                <p class="mt-2">Powered by <a href="https://tistory.com" target="_blank" class="hover:text-brand-600">Tistory</a></p>
+            </div>
+        </footer>
+
+        <!-- Scroll to Top Button -->
+        <button 
+            x-data="{ show: false }" 
+            @scroll.window="show = (window.pageYOffset > 300)" 
+            x-show="show" 
+            x-transition
+            @click="window.scrollTo({top: 0, behavior: 'smooth'})" 
+            class="fixed bottom-8 right-8 p-3 rounded-full bg-brand-600 hover:bg-brand-500 text-white shadow-lg z-40 transition-all transform hover:-translate-y-1"
+            style="display: none;"
+        >
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+        </button>
+
+    </div>
+    </s_t3>
+    
+    <script>
+        // Theme Logic
+        function themeData() {
+            return {
+                isDark: false,
+                mobileMenuOpen: false,
+                init() {
+                    // Check localStorage or System preference
+                    if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                        this.isDark = true;
+                    } else {
+                        this.isDark = false;
+                    }
+                    
+                    this.$watch('isDark', value => {
+                        localStorage.setItem('theme', value ? 'dark' : 'light');
+                        if (value) {
+                            document.documentElement.classList.add('dark');
+                        } else {
+                            document.documentElement.classList.remove('dark');
+                        }
+                    });
+                },
+                toggleTheme() {
+                    this.isDark = !this.isDark;
+                }
+            }
+        }
+        
+        // TOC Generation Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const article = document.querySelector('.prose');
+            if (article) {
+                const headers = article.querySelectorAll('h2, h3');
+                const tocContainer = document.getElementById('toc-container');
+                const tocList = document.getElementById('toc-list');
+                
+                if (headers.length > 0) {
+                    tocContainer.classList.remove('hidden');
+                    
+                    headers.forEach((header, index) => {
+                        const id = 'header-' + index;
+                        header.id = id;
+                        
+                        const li = document.createElement('li');
+                        const a = document.createElement('a');
+                        a.href = '#' + id;
+                        a.textContent = header.textContent;
+                        a.className = header.tagName === 'H2' ? 'block hover:text-brand-600 transition-colors' : 'block pl-4 text-xs hover:text-brand-600 transition-colors';
+                        
+                        // Smooth scroll
+                        a.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+                        });
+                        
+                        li.appendChild(a);
+                        tocList.appendChild(li);
+                    });
+                }
+            }
+        });
+    </script>
+</body>
+</html>
