@@ -1413,6 +1413,16 @@ body:is(.dark *) {
   background-color: rgb(55 65 81 / var(--tw-bg-opacity, 1));
 }
 
+/* Force Dark Mode Typography Contrast */
+
+.dark .prose h1,
+    .dark .prose h2,
+    .dark .prose h3,
+    .dark .prose h4,
+    .dark .prose strong {
+  color: var(--tw-prose-headings) !important;
+}
+
 /* Code Block Styling (Mac Style) */
 
 .prose pre {
