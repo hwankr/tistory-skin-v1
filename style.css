@@ -185,7 +185,8 @@ ol,ul{list-style:none}
 #sidebar .module-content{padding:0 4px 0 8px}
 #sidebar .module .module-title{padding:8px 4px 12px;font-size:var(--font-sm);font-weight:var(--font-semibold);color:var(--text-light);text-transform:uppercase;letter-spacing:0.05em;border-bottom:2px solid var(--primary-dimmed-20);margin-bottom:8px}
 .module-category .sub_category_list li a{color:var(--text-light);-webkit-transition:color .3s;-moz-transition:color .3s;-ms-transition:color .3s;-o-transition:color .3s;transition:color .3s}
-.module-category .c_cnt,.module-category .link_tit{display:none}
+.module-category .link_tit{display:none}
+.module-category .c_cnt{font-size:var(--font-xs);color:var(--text-lighter);margin-left:4px}
 .module-category .sub_category_list>li,.module-category .tt_category,.secret-wrap,.toc-wrap,.visitor,header{position:relative}
 .module-category .category_list>li{position:relative;font-size:var(--font-sm)}
 .module-category .category_list>li a{display:inline-block;padding:4px 0}
@@ -582,4 +583,19 @@ pre:hover .code-copy-btn{opacity:1}
 .scroll-top-btn{bottom:20px;right:20px;width:44px;height:44px}
 .code-copy-btn{opacity:1}
 #search-bar.active .input-text{width:140px}
+.side-progress{display:none}
+}
+
+/* Side Progress Bar - Vertical scroll indicator */
+.side-progress{position:fixed;left:calc(50% - 640px);top:50%;transform:translateY(-50%);width:4px;height:200px;background:var(--border-color);border-radius:2px;z-index:80}
+.side-progress::before{content:'';position:absolute;left:0;top:0;width:100%;height:var(--scroll-progress,0%);background:linear-gradient(180deg,var(--primary-color),var(--accent-color));border-radius:2px;transition:height 0.1s linear}
+.side-progress::after{content:'';position:absolute;left:-4px;top:var(--scroll-progress,0%);width:12px;height:12px;background:var(--primary-color);border-radius:50%;transform:translateY(-50%);box-shadow:0 0 10px var(--primary-dimmed-20);transition:top 0.1s linear}
+
+/* Right side decorative element */
+.side-decor{position:fixed;right:calc(50% - 640px);top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:16px;z-index:80}
+.side-decor-item{width:8px;height:8px;border-radius:50%;background:var(--border-color);transition:all var(--transition-fast)}
+.side-decor-item.active{background:var(--primary-color);transform:scale(1.5);box-shadow:0 0 8px var(--primary-dimmed-20)}
+
+@media only screen and (max-width:1400px){
+.side-progress,.side-decor{display:none}
 }
