@@ -1371,27 +1371,6 @@ body:is(.dark *) {
   --tw-prose-invert-td-borders: #334155;
 }
 
-.prose code {
-  border-radius: 0.25rem;
-  --tw-bg-opacity: 1;
-  background-color: rgb(241 245 249 / var(--tw-bg-opacity, 1));
-  padding-left: 0.375rem;
-  padding-right: 0.375rem;
-  padding-top: 0.125rem;
-  padding-bottom: 0.125rem;
-  font-family: "D2Coding", "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  font-weight: 500;
-  --tw-text-opacity: 1;
-  color: rgb(236 72 153 / var(--tw-text-opacity, 1));
-}
-
-.prose code:is(.dark *) {
-  --tw-bg-opacity: 1;
-  background-color: rgb(31 41 55 / var(--tw-bg-opacity, 1));
-}
-
 /* Custom Scrollbar for TOC */
 
 .custom-scrollbar::-webkit-scrollbar {
@@ -1415,11 +1394,8 @@ body:is(.dark *) {
 
 /* Force Dark Mode Typography Contrast */
 
-/* Force Dark Mode Typography Contrast */
-
 .dark .prose {
   color: #cbd5e1 !important;
-  /* Fallback */
 }
 
 .dark .prose p,
@@ -1428,7 +1404,6 @@ body:is(.dark *) {
     .dark .prose li,
     .dark .prose blockquote {
   color: #cbd5e1 !important;
-  /* slate-300 */
 }
 
 .dark .prose h1,
@@ -1438,59 +1413,15 @@ body:is(.dark *) {
     .dark .prose strong,
     .dark .prose b {
   color: #f1f5f9 !important;
-  /* slate-100 */
 }
 
 .dark .prose a {
   color: #38bdf8 !important;
-  /* sky-400 */
 }
 
-/* Code Block Styling (Mac Style) */
-
-.prose pre {
-  position: relative !important;
-  border-radius: 0.75rem !important;
-  border-width: 1px !important;
-  --tw-border-opacity: 1 !important;
-  border-color: rgb(229 231 235 / var(--tw-border-opacity, 1)) !important;
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(45 45 45 / var(--tw-bg-opacity, 1)) !important;
-  padding-top: 2.5rem !important;
-  --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05) !important;
-  --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color) !important;
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow) !important;
-}
-
-.prose pre:is(.dark *) {
-  --tw-border-opacity: 1 !important;
-  border-color: rgb(55 65 81 / var(--tw-border-opacity, 1)) !important;
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(30 30 30 / var(--tw-bg-opacity, 1)) !important;
-}
-
-.prose pre::before {
-  content: "";
-  position: absolute;
-  top: 14px;
-  left: 16px;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: #ff5f56;
-  box-shadow: 20px 0 0 #ffbd2e, 40px 0 0 #27c93f;
-  z-index: 10;
-}
+/* Base Inline Code Style */
 
 .prose code {
-  font-family: "D2Coding", "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-}
-
-/* Inline Code Styling Override */
-
-.prose :not(pre)>code {
   border-radius: 0.25rem;
   --tw-bg-opacity: 1;
   background-color: rgb(241 245 249 / var(--tw-bg-opacity, 1));
@@ -1498,12 +1429,15 @@ body:is(.dark *) {
   padding-right: 0.375rem;
   padding-top: 0.125rem;
   padding-bottom: 0.125rem;
+  font-family: "D2Coding", "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
   font-weight: 500;
   --tw-text-opacity: 1;
   color: rgb(236 72 153 / var(--tw-text-opacity, 1));
 }
 
-.prose :not(pre)>code:is(.dark *) {
+.prose code:is(.dark *) {
   --tw-bg-opacity: 1;
   background-color: rgb(31 41 55 / var(--tw-bg-opacity, 1));
   --tw-text-opacity: 1;
@@ -1531,6 +1465,64 @@ body:is(.dark *) {
   background-color: rgb(31 41 55 / var(--tw-bg-opacity, 1));
   --tw-text-opacity: 1;
   color: rgb(56 189 248 / var(--tw-text-opacity, 1));
+}
+
+/* Code Block Styling (Clean Mac Dark Style) */
+
+.prose pre {
+  position: relative !important;
+  overflow: hidden !important;
+  border-radius: 0.75rem !important;
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(30 30 30 / var(--tw-bg-opacity, 1)) !important;
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
+  padding-top: 3rem !important;
+  padding-bottom: 1.5rem !important;
+  --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1) !important;
+  --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color) !important;
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow) !important;
+}
+
+.prose pre:is(.dark *) {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(30 30 30 / var(--tw-bg-opacity, 1)) !important;
+}
+
+.prose pre {
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  font-family: 'JetBrains Mono', 'D2Coding', monospace !important;
+}
+
+/* Mac Window Controls (Traffic Lights) */
+
+.prose pre::before {
+  content: "";
+  position: absolute;
+  top: 18px;
+  left: 20px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #ff5f56;
+  box-shadow: 20px 0 0 #ffbd2e, 40px 0 0 #27c93f;
+  opacity: 1;
+  z-index: 10;
+}
+
+/* Reset Code inside Pre (Block) to prevent double styling */
+
+.prose pre code {
+  background-color: transparent !important;
+  color: #d4d4d4 !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  font-weight: normal !important;
+  font-family: inherit !important;
+  font-size: 0.9em !important;
+  line-height: 1.7 !important;
+  text-shadow: none !important;
+  box-shadow: none !important;
 }
 
 .fixed {

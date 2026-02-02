@@ -9,9 +9,6 @@
 }
 
 @layer components {
-    .prose code {
-        @apply bg-slate-100 dark:bg-gray-800 px-1.5 py-0.5 rounded text-sm text-pink-500 font-mono font-medium;
-    }
 
     /* Custom Scrollbar for TOC */
     .custom-scrollbar::-webkit-scrollbar {
@@ -27,10 +24,8 @@
     }
 
     /* Force Dark Mode Typography Contrast */
-    /* Force Dark Mode Typography Contrast */
     .dark .prose {
         color: #cbd5e1 !important;
-        /* Fallback */
     }
 
     .dark .prose p,
@@ -39,7 +34,6 @@
     .dark .prose li,
     .dark .prose blockquote {
         color: #cbd5e1 !important;
-        /* slate-300 */
     }
 
     .dark .prose h1,
@@ -49,39 +43,15 @@
     .dark .prose strong,
     .dark .prose b {
         color: #f1f5f9 !important;
-        /* slate-100 */
     }
 
     .dark .prose a {
         color: #38bdf8 !important;
-        /* sky-400 */
     }
 
-    /* Code Block Styling (Mac Style) */
-    .prose pre {
-        @apply rounded-xl bg-[#2d2d2d] dark:bg-[#1e1e1e] border border-gray-200 dark:border-gray-700 shadow-sm relative pt-10 !important;
-    }
-
-    .prose pre::before {
-        content: "";
-        position: absolute;
-        top: 14px;
-        left: 16px;
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        background-color: #ff5f56;
-        box-shadow: 20px 0 0 #ffbd2e, 40px 0 0 #27c93f;
-        z-index: 10;
-    }
-
+    /* Base Inline Code Style */
     .prose code {
-        @apply font-mono text-sm;
-    }
-
-    /* Inline Code Styling (Base) */
-    .prose code {
-        @apply px-1.5 py-0.5 rounded bg-slate-100 dark:bg-gray-800 text-pink-500 dark:text-pink-400 font-medium;
+        @apply px-1.5 py-0.5 rounded bg-slate-100 dark:bg-gray-800 text-pink-500 dark:text-pink-400 font-medium font-mono text-sm;
     }
 
     /* Map Underline (Ctrl+U) to Inline Code Style */
@@ -89,7 +59,7 @@
         @apply px-1.5 py-0.5 rounded bg-slate-100 dark:bg-gray-800 text-brand-600 dark:text-brand-400 font-medium no-underline;
     }
 
-    /* Code Block Styling (Clean Mac Dark Style) - Overrides Base Code Style */
+    /* Code Block Styling (Clean Mac Dark Style) */
     .prose pre {
         @apply rounded-xl bg-[#1e1e1e] dark:bg-[#1e1e1e] shadow-xl relative pt-12 pb-6 px-6 overflow-hidden !important;
         border: 1px solid rgba(255, 255, 255, 0.1) !important;
@@ -108,6 +78,7 @@
         background-color: #ff5f56;
         box-shadow: 20px 0 0 #ffbd2e, 40px 0 0 #27c93f;
         opacity: 1;
+        z-index: 10;
     }
 
     /* Reset Code inside Pre (Block) to prevent double styling */
@@ -122,5 +93,5 @@
         line-height: 1.7 !important;
         text-shadow: none !important;
         box-shadow: none !important;
-        /* Ensure no shadow from inline style */
     }
+}
