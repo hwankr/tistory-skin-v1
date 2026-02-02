@@ -712,16 +712,6 @@
     <button id="scroll-top-btn" class="scroll-top-btn" aria-label="맨 위로 스크롤">
       <span class="material-icons-outlined">keyboard_arrow_up</span>
     </button>
-    <!-- Side Progress Bar -->
-    <div class="side-progress" id="side-progress"></div>
-    <!-- Right Side Decorative Dots -->
-    <div class="side-decor" id="side-decor">
-      <div class="side-decor-item active"></div>
-      <div class="side-decor-item"></div>
-      <div class="side-decor-item"></div>
-      <div class="side-decor-item"></div>
-      <div class="side-decor-item"></div>
-    </div>
     <script>
       document.addEventListener("DOMContentLoaded",(function(){mutationObserver.disconnect();var t=!1,e=!1,n=!1,o=document.querySelectorAll(".post-reply, .container_postbtn, pre code"),c=new IntersectionObserver((function(n,o){n.forEach((function(n){!function(n,o){if(n.isIntersecting){if(n.target.classList.contains("post-reply")){var c=blockedStylesheets.find((function(t){return t.href.includes("comment")}));c&&loadStylesheet(c.href),(c=blockedScripts.find((function(t){return t.src.includes("comment")})))&&loadScript(c.src).then((function(){var t=new Event("load");window.dispatchEvent(t)})).catch((function(){}))}else n.target.classList.contains("container_postbtn")?e||((c=blockedStylesheets.find((function(t){return t.href.includes("postBtn")})))&&loadStylesheet(c.href),(c=blockedScripts.find((function(t){return t.src.includes("reaction-button-container")})))&&loadScript(c.src),n.target.style.visibility="visible",e=!0):"PRE"!==n.target.parentElement.tagName||"CODE"!==n.target.tagName||t||(loadStylesheet("./images/code-light.css"),loadStylesheet("./images/code-dark.css"),loadScript("./images/highlight.js").then((function(){window.hljs&&typeof window.hljs.highlightAll==="function"&&window.hljs.highlightAll().catch((function(){}))})).catch((function(){})),t=!0);o.unobserve(n.target)}}(n,o)}))}),{root:null,rootMargin:"200px",threshold:.2});o.forEach((function(t){c.observe(t)})),window.addEventListener("scroll",(function(){var t=(document.body.scrollTop||document.documentElement.scrollTop)/(document.documentElement.scrollHeight-document.documentElement.clientHeight)*100,e=document.getElementById("progress");e&&(e.style.width=t+"%")}),{passive:!0});var r=document.getElementById("header_wrap");r&&window.addEventListener("scroll",(function(){50<window.scrollY?r.classList.add("shrink"):r.classList.remove("shrink")}),{passive:!0}),(o=document.querySelector(".btn_topMenu"))&&o.addEventListener("click",(function(t){if(t.stopPropagation(),t=document.querySelector(".dropdown-content")){if(!n){var e=blockedScripts.find((function(t){return t.src.includes("menubar.min")}));e&&loadScript(e.src),n=!0}(td=document.querySelector(".dimmed"))&&td.classList.toggle("show"),t.classList.toggle("dropdown-content-toggle")}})),[document.querySelector(".btn_close"),document.querySelector(".dimmed")].forEach((function(t){t.addEventListener("click",(function(t){t.stopPropagation(),(td=document.querySelector(".dimmed"))&&td.classList.remove("show"),(t=document.querySelector(".dropdown-content"))&&t.classList.remove("dropdown-content-toggle")}))})),document.querySelectorAll(".post_category_name").forEach((function(t){var e=t.textContent.trim().split("/")[1];e&&(t.textContent=e.trim())})),document.querySelectorAll(".p-category").forEach((function(t){var e=t.textContent.split("/")[1];e&&(t.textContent=e.trim())})),document.querySelectorAll("iframe").forEach((function(t){var e=t.getAttribute("name");t.setAttribute("title",e||"inner iframe")})),(o=document.getElementById("content"))&&o.classList.add("show"),window.addEventListener("scroll",(function t(){if(0<window.pageYOffset){var e=blockedScripts.find((function(t){return t.src.includes("googletagmanager.com/gtag/js?id")}));e&&loadScript(e.src).then((function(){var t=document.createElement("script");t.innerHTML=blockedScriptContents[0].textContent,document.head.appendChild(t)})).catch((function(){})),window.removeEventListener("scroll",t)}}),{passive:!0})}));
     </script>
@@ -788,7 +778,7 @@
         document.addEventListener("DOMContentLoaded",(function(){document.querySelectorAll("[data-ke-style='style3']").forEach((t=>{if((e=t.innerHTML.trimStart()).startsWith("@danger")||e.startsWith("@warning")){var e=e.split("<br>",2);t.setAttribute("style",`background-color: var(--${e[0].slice(1).trim()}) !important`),t.innerHTML=e[1]}})),document.querySelectorAll("[data-ke-type='moreLess']").forEach((t=>{var e=t.children[1].children[0],r=e.innerText;r.startsWith("@")&&(r=r.slice(1).trimStart(),t.children[0].innerText=r,t.setAttribute("data-text-more",r),e.remove())}))}));
       </script>
       <style type="text/css">
-        .post-content p code,.post-content li code,.post-content u{padding:0.15em 0.4em;text-decoration:none;border-radius:4px;background-color:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.15);color:#dc2626;font-size:0.9em;line-height:inherit;display:inline;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+        .post-content p code,.post-content li code,.post-content u{background-color:rgba(135,131,120,0.15);color:#EB5757;border-radius:4px;font-family:Consolas,Monaco,monospace;padding:0.2rem 0.4rem;margin:0 0.2rem;font-size:0.9em;text-decoration:none;line-height:inherit;display:inline;box-decoration-break:clone;-webkit-box-decoration-break:clone}
       </style>
     </s_if_var_devRooStyle>
     <s_if_var_enableMathjax>
@@ -842,36 +832,58 @@
         });
       })();
     </script>
-    <!-- Side Progress & Decor Animation -->
+    <!-- Sticky TOC in Sidebar Position -->
     <script>
       (function(){
-        var sideProgress = document.getElementById('side-progress');
-        var sideDecor = document.getElementById('side-decor');
-        var decorItems = sideDecor ? sideDecor.querySelectorAll('.side-decor-item') : [];
+        var originalToc = document.querySelector('.toc-wrap');
+        var sidebar = document.getElementById('sidebar');
         
-        if(sideProgress || decorItems.length > 0){
-          window.addEventListener('scroll', function(){
-            var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-            var scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            var progress = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
-            
-            if(sideProgress){
-              sideProgress.style.setProperty('--scroll-progress', progress + '%');
-            }
-            
-            if(decorItems.length > 0){
-              var activeIndex = Math.min(Math.floor(progress / (100 / decorItems.length)), decorItems.length - 1);
-              decorItems.forEach(function(item, index){
-                if(index <= activeIndex){
-                  item.classList.add('active');
-                } else {
-                  item.classList.remove('active');
-                }
-              });
-            }
-          }, {passive: true});
+        if(!originalToc || !sidebar) return;
+        
+        // Create sticky TOC element
+        var stickyToc = document.createElement('div');
+        stickyToc.className = 'toc-sticky';
+        stickyToc.innerHTML = originalToc.innerHTML;
+        sidebar.appendChild(stickyToc);
+        
+        // Get sidebar position for sticky TOC right position
+        function updateStickyPosition(){
+          var sidebarRect = sidebar.getBoundingClientRect();
+          stickyToc.style.right = (window.innerWidth - sidebarRect.right) + 'px';
+          stickyToc.style.width = sidebarRect.width + 'px';
         }
+        
+        // Check if sidebar is visible (not hidden by media query)
+        function isSidebarVisible(){
+          return window.getComputedStyle(sidebar).display !== 'none';
+        }
+        
+        // Handle scroll
+        function handleScroll(){
+          if(!isSidebarVisible()){
+            stickyToc.classList.remove('visible');
+            return;
+          }
+          
+          var tocRect = originalToc.getBoundingClientRect();
+          var headerHeight = 60;
+          
+          if(tocRect.bottom < headerHeight){
+            stickyToc.classList.add('visible');
+            updateStickyPosition();
+          } else {
+            stickyToc.classList.remove('visible');
+          }
+        }
+        
+        window.addEventListener('scroll', handleScroll, {passive: true});
+        window.addEventListener('resize', function(){
+          if(stickyToc.classList.contains('visible')){
+            updateStickyPosition();
+          }
+        }, {passive: true});
       })();
     </script>
   </body>
 </html>
+
