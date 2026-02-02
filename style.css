@@ -543,3 +543,43 @@ blockquote[data-ke-style=style1] blockquote[data-ke-style=style1]{margin:0!impor
 html,body{scroll-behavior:auto}
 html.js #content.show{transition:none}
 }
+
+/* Scroll to Top Button */
+.scroll-top-btn{position:fixed;bottom:32px;right:32px;width:48px;height:48px;border-radius:var(--radius-circle);background:var(--bg-elevated);border:1px solid var(--border-color);box-shadow:var(--shadow);color:var(--text-light);cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transform:translateY(20px);transition:all var(--transition-normal);z-index:90}
+.scroll-top-btn.visible{opacity:1;visibility:visible;transform:translateY(0)}
+.scroll-top-btn:hover{background:var(--primary-color);color:var(--white);border-color:var(--primary-color);transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.scroll-top-btn .material-icons-outlined{font-size:24px}
+
+/* Code Copy Button */
+.code-copy-btn{position:absolute;top:8px;right:8px;width:32px;height:32px;border-radius:var(--radius-sm);background:var(--bg-btn);border:1px solid var(--border-color);color:var(--text-lighter);cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;transition:all var(--transition-fast);z-index:5}
+pre:hover .code-copy-btn{opacity:1}
+.code-copy-btn:hover{background:var(--primary-color);color:var(--white);border-color:var(--primary-color)}
+.code-copy-btn.copied{background:var(--primary-color);color:var(--white);border-color:var(--primary-color)}
+.code-copy-btn .material-icons-outlined{font-size:16px}
+
+/* Related Posts Card Style */
+.area_related_wrap{margin:56px 0;padding:24px;background:var(--bg-elevated);border-radius:var(--radius-lg);border:1px solid var(--border-color)}
+.area_related_wrap .tit_related{font-size:var(--font-lg);font-weight:var(--font-bold);color:var(--text-color)}
+.area_related_wrap .list_item{padding:12px 0;margin:0;border-bottom:1px solid var(--border-color);transition:all var(--transition-fast)}
+.area_related_wrap .list_item:last-child{border-bottom:none}
+.area_related_wrap .list_item:hover{padding-left:8px}
+.area_related_wrap .list_item .area_info .title{font-size:var(--font-md);color:var(--text-color);transition:color var(--transition-fast)}
+.area_related_wrap .list_item .area_info .title:hover{color:var(--primary-color)}
+.area_related_wrap .list_item .area_info .list_date{color:var(--text-lighter);font-size:var(--font-xs)}
+
+/* Search Bar Animation */
+#search-bar{background-color:var(--bg-overlay);border-radius:var(--radius-md);display:flex;padding:4px 8px;margin:0 12px 4px;transition:all var(--transition-normal)}
+#search-bar .input-text{width:0;opacity:0;transition:all var(--transition-normal)}
+#search-bar.active{background-color:var(--bg-elevated);box-shadow:var(--shadow);border:1px solid var(--border-color);padding:4px 12px}
+#search-bar.active .input-text{width:180px;opacity:1;padding:0 8px}
+#search-bar .search-icon{transition:color var(--transition-fast)}
+#search-bar:hover .search-icon{color:var(--primary-color)}
+#search-bar.active .search-close-icon{display:block;color:var(--text-lighter);transition:color var(--transition-fast)}
+#search-bar.active .search-close-icon:hover{color:var(--primary-color)}
+
+/* Mobile adjustments for new components */
+@media only screen and (max-width:600px){
+.scroll-top-btn{bottom:20px;right:20px;width:44px;height:44px}
+.code-copy-btn{opacity:1}
+#search-bar.active .input-text{width:140px}
+}

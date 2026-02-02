@@ -708,6 +708,10 @@
         </div>
       </div>
     </s_t3>
+    <!-- Scroll to Top Button -->
+    <button id="scroll-top-btn" class="scroll-top-btn" aria-label="맨 위로 스크롤">
+      <span class="material-icons-outlined">keyboard_arrow_up</span>
+    </button>
     <script>
       document.addEventListener("DOMContentLoaded",(function(){mutationObserver.disconnect();var t=!1,e=!1,n=!1,o=document.querySelectorAll(".post-reply, .container_postbtn, pre code"),c=new IntersectionObserver((function(n,o){n.forEach((function(n){!function(n,o){if(n.isIntersecting){if(n.target.classList.contains("post-reply")){var c=blockedStylesheets.find((function(t){return t.href.includes("comment")}));c&&loadStylesheet(c.href),(c=blockedScripts.find((function(t){return t.src.includes("comment")})))&&loadScript(c.src).then((function(){var t=new Event("load");window.dispatchEvent(t)})).catch((function(){}))}else n.target.classList.contains("container_postbtn")?e||((c=blockedStylesheets.find((function(t){return t.href.includes("postBtn")})))&&loadStylesheet(c.href),(c=blockedScripts.find((function(t){return t.src.includes("reaction-button-container")})))&&loadScript(c.src),n.target.style.visibility="visible",e=!0):"PRE"!==n.target.parentElement.tagName||"CODE"!==n.target.tagName||t||(loadStylesheet("./images/code-light.css"),loadStylesheet("./images/code-dark.css"),loadScript("./images/highlight.js").then((function(){window.hljs&&typeof window.hljs.highlightAll==="function"&&window.hljs.highlightAll().catch((function(){}))})).catch((function(){})),t=!0);o.unobserve(n.target)}}(n,o)}))}),{root:null,rootMargin:"200px",threshold:.2});o.forEach((function(t){c.observe(t)})),window.addEventListener("scroll",(function(){var t=(document.body.scrollTop||document.documentElement.scrollTop)/(document.documentElement.scrollHeight-document.documentElement.clientHeight)*100,e=document.getElementById("progress");e&&(e.style.width=t+"%")}),{passive:!0});var r=document.getElementById("header_wrap");r&&window.addEventListener("scroll",(function(){50<window.scrollY?r.classList.add("shrink"):r.classList.remove("shrink")}),{passive:!0}),(o=document.querySelector(".btn_topMenu"))&&o.addEventListener("click",(function(t){if(t.stopPropagation(),t=document.querySelector(".dropdown-content")){if(!n){var e=blockedScripts.find((function(t){return t.src.includes("menubar.min")}));e&&loadScript(e.src),n=!0}(td=document.querySelector(".dimmed"))&&td.classList.toggle("show"),t.classList.toggle("dropdown-content-toggle")}})),[document.querySelector(".btn_close"),document.querySelector(".dimmed")].forEach((function(t){t.addEventListener("click",(function(t){t.stopPropagation(),(td=document.querySelector(".dimmed"))&&td.classList.remove("show"),(t=document.querySelector(".dropdown-content"))&&t.classList.remove("dropdown-content-toggle")}))})),document.querySelectorAll(".post_category_name").forEach((function(t){var e=t.textContent.trim().split("/")[1];e&&(t.textContent=e.trim())})),document.querySelectorAll(".p-category").forEach((function(t){var e=t.textContent.split("/")[1];e&&(t.textContent=e.trim())})),document.querySelectorAll("iframe").forEach((function(t){var e=t.getAttribute("name");t.setAttribute("title",e||"inner iframe")})),(o=document.getElementById("content"))&&o.classList.add("show"),window.addEventListener("scroll",(function t(){if(0<window.pageYOffset){var e=blockedScripts.find((function(t){return t.src.includes("googletagmanager.com/gtag/js?id")}));e&&loadScript(e.src).then((function(){var t=document.createElement("script");t.innerHTML=blockedScriptContents[0].textContent,document.head.appendChild(t)})).catch((function(){})),window.removeEventListener("scroll",t)}}),{passive:!0})}));
     </script>
@@ -786,6 +790,47 @@
     <!-- Block Highlight.js CDN from unknown -->
     <script>
       const highlightJsCDN="cdnjs.cloudflare.com/ajax/libs/highlight.js";window.onload=function(){document.querySelectorAll("script, link").forEach(e=>{(e.src?.includes(highlightJsCDN)||e.href?.includes(highlightJsCDN))&&e.remove()})};const observer=new MutationObserver(e=>{e.forEach(e=>{e.addedNodes.forEach(e=>{("SCRIPT"===e.tagName||"LINK"===e.tagName)&&(e.src?.includes(highlightJsCDN)||e.href?.includes(highlightJsCDN))&&e.remove()})})});observer.observe(document.documentElement,{childList:!0,subtree:!0});
+    </script>
+    <!-- Scroll to Top & Code Copy Button -->
+    <script>
+      (function(){
+        // Scroll to Top Button
+        var scrollBtn = document.getElementById('scroll-top-btn');
+        if(scrollBtn){
+          window.addEventListener('scroll', function(){
+            if(window.scrollY > 300){
+              scrollBtn.classList.add('visible');
+            } else {
+              scrollBtn.classList.remove('visible');
+            }
+          }, {passive: true});
+          scrollBtn.addEventListener('click', function(){
+            window.scrollTo({top: 0, behavior: 'smooth'});
+          });
+        }
+        // Code Copy Button
+        document.querySelectorAll('pre code').forEach(function(codeBlock){
+          var pre = codeBlock.parentElement;
+          if(pre && pre.tagName === 'PRE'){
+            var btn = document.createElement('button');
+            btn.className = 'code-copy-btn';
+            btn.innerHTML = '<span class="material-icons-outlined">content_copy</span>';
+            btn.title = '코드 복사';
+            btn.addEventListener('click', function(){
+              navigator.clipboard.writeText(codeBlock.textContent).then(function(){
+                btn.innerHTML = '<span class="material-icons-outlined">check</span>';
+                btn.classList.add('copied');
+                setTimeout(function(){
+                  btn.innerHTML = '<span class="material-icons-outlined">content_copy</span>';
+                  btn.classList.remove('copied');
+                }, 2000);
+              }).catch(function(){});
+            });
+            pre.style.position = 'relative';
+            pre.appendChild(btn);
+          }
+        });
+      })();
     </script>
   </body>
 </html>
