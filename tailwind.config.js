@@ -13,6 +13,8 @@ module.exports = {
         brand: {
              50: '#f0f9ff',
             100: '#e0f2fe',
+            300: '#7dd3fc', // Sky 300
+            400: '#38bdf8', // Sky 400
             500: '#0ea5e9', // Sky 500
             600: '#0284c7',
             900: '#0c4a6e',
